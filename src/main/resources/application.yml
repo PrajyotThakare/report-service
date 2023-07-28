@@ -1,0 +1,35 @@
+server:
+  port : 8084
+  
+spring:
+  application:
+    name: report-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mydatabase
+    username: root
+    password: 1234
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:      hibernate:
+        format_sql: true
+#  kafka:
+#    consumer:#      properties:#        spring.json.trusted.packages: "com.prajyot.report.model.*"
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+      
+ReportLocation: C:\\Users\\prajy\\\Documents\\workspace-spring-tool-suit\\JasperReport
+
+report-config:
+   reportMap:
+     1:
+      name: city
+      jasperExcel: true 
+     2:
+      name: medicine
+      jasperExcel: false  
